@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Secret Quiz</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background-color: #121212;
+      color: white;
+    }
+
+    .container {
+      margin-top: 50px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 10px;
+      width: 200px;
+      border-radius: 5px;
+      border: none;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00c853;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #secret {
+      display: none;
+      margin-top: 30px;
+      font-size: 24px;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Answer All Questions Correctly 🔐</h1>
+
+  <p>1. What is 2 + 2?</p>
+  <input type="text" id="q1">
+
+  <p>2. What color is the sky?</p>
+  <input type="text" id="q2">
+
+  <p>3. Type the word: hello</p>
+  <input type="text" id="q3">
+
+  <p>4. What is 5 x 2?</p>
+  <input type="text" id="q4">
+
+  <p>5. What is the first letter of the alphabet?</p>
+  <input type="text" id="q5">
+
+  <br><br>
+  <button onclick="checkAnswers()">Submit</button>
+
+  <div id="secret">
+    🎉 SECRET UNLOCKED: You are awesome!
+  </div>
+</div>
+
+<script>
+function checkAnswers() {
+  let a1 = document.getElementById("q1").value.trim().toLowerCase();
+  let a2 = document.getElementById("q2").value.trim().toLowerCase();
+  let a3 = document.getElementById("q3").value.trim().toLowerCase();
+  let a4 = document.getElementById("q4").value.trim().toLowerCase();
+  let a5 = document.getElementById("q5").value.trim().toLowerCase();
+
+  if (a1 === "4" &&
+      a2 === "blue" &&
+      a3 === "hello" &&
+      a4 === "10" &&
+      a5 === "a") {
+    
+    document.getElementById("secret").style.display = "block";
+  } else {
+    alert("Some answers are wrong 😢");
+  }
+}
+</script>
+
+</body>
+</html>
